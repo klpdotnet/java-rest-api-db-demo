@@ -2,6 +2,8 @@ package com.crud.db_demo.rest_db_demo.controllers;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crud.db_demo.rest_db_demo.models.CloudVendor;
+import com.crud.db_demo.rest_db_demo.response.ResponseHandler;
 import com.crud.db_demo.rest_db_demo.service.ICloudVendorService;
 
 @RestController
@@ -25,9 +28,9 @@ public class CloudVendorController {
 	}
 
 	@GetMapping("{vendorId}")
-	public CloudVendor getCloudVendorDetails(@PathVariable("vendorId") String vendorId) 
+	public ResponseEntity<Object> getCloudVendorDetails(@PathVariable("vendorId") String vendorId) 
 	{
-		return cloudVendorService.getCloudVendor(vendorId);
+		return ResponseHandler.responseBuilder("Requested vendor details fetch successfully!", HttpStatus.OK, cloudVendorService.getCloudVendor(vendorId));
 	}
 	
 	@GetMapping()
