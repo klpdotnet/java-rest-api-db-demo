@@ -1,7 +1,6 @@
 package com.crud.db_demo.rest_db_demo.service;
 
 import java.util.List;
-
 import com.crud.db_demo.rest_db_demo.models.CloudVendor;
 
 public interface ICloudVendorService {

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.crud.db_demo.rest_db_demo.models.CloudVendor;
 import com.crud.db_demo.rest_db_demo.repository.CloudVendorRepository;
 import com.crud.db_demo.rest_db_demo.service.ICloudVendorService;
+import com.crud.db_demo.rest_db_demo.exception.CloudVendorNotFoundException;
 
 @Service
 public class CloudVendorService implements ICloudVendorService {
@@ -37,6 +38,8 @@ public class CloudVendorService implements ICloudVendorService {
 
 	@Override
 	public CloudVendor getCloudVendor(String cloudVendorId) {
+		if(cloudVendorRepository.findById(cloudVendorId).isEmpty())
+			throw new CloudVendorNotFoundException("Requested cloud vendor does not exists.");
 		return cloudVendorRepository.findById(cloudVendorId).get();
 	}
 

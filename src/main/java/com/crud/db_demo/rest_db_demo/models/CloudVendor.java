@@ -6,7 +6,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="cloud_vender_info")
-public class CloudVendor {
+public class CloudVendor 
+{
 	@Id
 	private String vendorId;
 	private String vendorName;
@@ -14,45 +15,56 @@ public class CloudVendor {
 	private String vendorPhoneNumber;
 	
 	
-	public CloudVendor() {
+	public CloudVendor() 
+	{
+		
 	}
 
-	public CloudVendor(String vendorId, String vendorName, String vendorAddress, String vendorPhoneNumber) {
+	public CloudVendor(String vendorId, String vendorName, String vendorAddress, String vendorPhoneNumber) 
+	{
 		this.vendorId = vendorId;
 		this.vendorName = vendorName;
 		this.vendorAddress = vendorAddress;
 		this.vendorPhoneNumber = vendorPhoneNumber;
 	}
 
-	public String getVendorId() {
+	public String getVendorId() 
+	{
 		return vendorId;
 	}
 
-	public void setVendorId(String vendorId) {
+	public void setVendorId(String vendorId) 
+	{
 		this.vendorId = vendorId;
 	}
 
-	public String getVendorName() {
+	public String getVendorName() 
+	{
 		return vendorName;
 	}
 
-	public void setVendorName(String vendorName) {
+	public void setVendorName(String vendorName) 
+	{
 		this.vendorName = vendorName;
 	}
 
-	public String getVendorAddress() {
+	public String getVendorAddress() 
+	{
 		return vendorAddress;
 	}
 
-	public void setVendorAddress(String vendorAddress) {
+	public void setVendorAddress(String vendorAddress) 
+	{
 		this.vendorAddress = vendorAddress;
 	}
 
-	public String getVendorPhoneNumber() {
+	public String getVendorPhoneNumber() 
+	{
 		return vendorPhoneNumber;
 	}
 
-	public void setVendorPhoneNumber(String vendorPhoneNumber) {
+	public void setVendorPhoneNumber(String vendorPhoneNumber) 
+	{
 		this.vendorPhoneNumber = vendorPhoneNumber;
 	}
 }
