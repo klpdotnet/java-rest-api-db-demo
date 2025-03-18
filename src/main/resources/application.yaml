@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=sampleDB;trustServerCertificate=true
+    username: sa
+    password: klpnaidu1011
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
